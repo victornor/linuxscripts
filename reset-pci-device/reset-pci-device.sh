@@ -10,7 +10,7 @@ device_name="Atheros"
 device_tree="/sys/devices"
 
 echo Finding "$device_name" device number
-device_number=`lspci -nn | grep "$device_name" | grep -E -o "^[0-9:.]+"`
+device_number=`lspci -nn | grep "$device_name" | grep -E -o "^[0-9a-z:.]+"`
 
 device_path=`find "$device_tree" | grep "$device_number" | head -n 1`
 
